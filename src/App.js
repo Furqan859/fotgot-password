@@ -1,14 +1,26 @@
 import React from 'react'
 
-import {Box, Button, Container, CssBaseline, Grid, TextField, ThemeProvider, Typography} from '@mui/material'
+import {Box, Button, Container, CssBaseline, Grid, TextField, Typography} from '@mui/material'
+import { makeStyles } from '@mui/styles';
 
+const useStyles = makeStyles({
+  root: {
+    background: 'black',
+    border: 0,
+    borderRadius: 3,
+    color: 'white',
+    height: 48,
+    padding: '0 30px',
+    '&:hover':{
+      color: 'black',
+      background:"#f5f5f5"
+    }
+  },
+});
 
 function App() {
+  const classes = useStyles();
  return(
-
-
-
-
 <React.Fragment>
     <CssBaseline />
 <Container maxWidth={'sm'} >
@@ -37,11 +49,11 @@ style={{ minHeight: '100vh' }}>
   
 
    <Grid item>
-   <Button  fullWidth sx={{backgroundColor:'black',height:'50px',color:'white' }}>Reset Password</Button>
+   <Button className={classes.root} fullWidth >Reset Password</Button>
    </Grid>
 
    <Grid item>
-   <Button  fullWidth sx={{backgroundColor:'black',color:'white',height:'50px'}}>Back</Button>
+   <Button className={classes.root} fullWidth >Back</Button>
    </Grid>
    
    
